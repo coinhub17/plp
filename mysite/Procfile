@@ -1,1 +1,1 @@
-web : gunicorn realtekrealty.wsgi
+web : gunicorn mysite.wsgi
