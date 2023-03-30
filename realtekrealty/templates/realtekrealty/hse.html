@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %} \Latest photos{% endblock %}
+{% include 'realtekrealty/navbar.html' %}
+{% block content %}
+<h1 class="text-success">HOUSES/PROPERTY IN MARKET</h1>
+
+<div class='row gx-4 gx-lg-5'>
+  {% for vds in vids %}
+  {% if vds.hse or vds.vhse %}
+  <div class='col-md-3 mb-5'>
+    <div class='card h-70 border border-info'>
+      <div class='card-body'>
+        <h class="text-success text-center fw-bold">{{vds.htp}}</h>
+        <img src="{{vds.hse.url}}"class="card-img-top" width="300px" height="250px" alt="">
+        <h class="card-title text-primary fw-bold">{{vds.loc}}</h>
+        <p class="card-subtitle text-alert fw-bold">{{vds.desc}}</p>
+        <p class="card-text text-warning bg-secondary fw-bold"><br>ksh: {{vds.price}}</p>
+        <h class="card text text-success text-center">{{vds.phone}}</h>
+        <a href="{{vds.hse.url}}" class="card-link btn btn-primary float-left" download="{{vds.hse.url}}">Download Here</a>
+        <a href="{{vds.vhse.url}}" class="card-link btn btn-primary float-right">View video</a> 
+      </div>
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>            
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+

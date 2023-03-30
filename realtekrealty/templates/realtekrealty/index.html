@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block content%}
+<div class="container">
+    <h1 class="font-weight-dark" "text-primary"></h1>
+    <p class="text-success bg-gradient-info">
+        REALTEKREALTY is the best real estate company that offers combination of services that meeets our client expectations<br>
+        The company offers an umbrella of services and is allowed to operate as so under the Kenya company's act<br>
+        Our area of operation is mainly Nairobi, in the following areas:Karen,Kilimani,Lavington,Kileleshwa,Runda,Muthaiga,Loresho, Langata
+    </p>
+    <p class="text-warning font-italic bg-gradient-info">
+        REALTEKREALTY offers the following services:
+        <ol class="text-info fw-bold bg-gradient-info">
+            <li>Real Estate purchase and sales</li>
+            <li>Construction and Architecture</li>
+            <li>Estate Valuation</li>
+            <li>Real Estate Consultation and Project Management</li>
+            <li>Mortgage Financing</li>
+            <li>Asset Financing and REITs</li>
+            <li>Tax Consultancy</li>
+            <li>Property Auction</li>
+        <ol>
+    </p>
+</div>
+<div class-'row gx-4 gx-lg-5'>
+    {% for img in x %}
+    <div class='col-md-3 mb-5'>
+        <div class='card h-70 border border-info'>
+            <div class='card-body'>
+                <img src="{{img.img.url}}" class="card-img-top" width="300px" height="250px" alt="">
+                <h class="card-title text-primary fw-bold">{{img.locate}}</h>
+                <p class="card-subtitle text-alert fw-bold">{{img.descr}}</p>
+                <p class="card-text text-warning bg-secondary fw-bold">ksh: {{img.price}}</p>
+                <h class="card text text-success text-center">{{img.call}}</h><br>
+                <a href="{{img.img.url}}" class="card-link btn btn-primary float-left" download="{{vds.hse.url}}">Download Here</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+
+
+
+ 

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} \Latest photos{% endblock %}
+{% include 'realtekrealty/navbar.html' %}
+{% block content %}
+
+<h1>Estate Videos</h1>
+
+<div class='row gx-4 gx-lg-5'>
+  {% for vds in vids %}
+  {% if vds.vhse %}
+  <div class='col-md-3 mb-5'>
+    <div class='card h-100 border border-info'>
+      <h class="text-success fw-bold">{{vds.htp}}</h>
+      <video id="remoteVideo" controls='controls' loop='False'>
+        <source src="{{vds.vhse.url}}" width=400px height=300px class="card-img-top" alt="">
+      </video>
+      <h class="card-title text-primary fw-bold">{{vds.loc}}</h>
+      <p class="card-subtitle text-alert fw-bold">{{vds.desc}}<br></p>
+      <p class="card-text text-warning bg-secondary fw-bold">ksh: {{vds.price}}</p>
+      <h class="card text text-success text-center">{{vds.phone}}</h>
+      <a href="{{vds.vhse.url}}" download="{{vds.vhse.url}}" class="card-link btn btn-primary float-left" >Download Here</a><br>
+      <a href="{% url 'realtekrealty:hse' %}" class="card-link btn btn-primary float-right">BACK</a>  
+    </div>
+  </div>
+  {% endif %}
+  {% endfor %}
+</div>          
+{% endblock %}
+

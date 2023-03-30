@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %} | Register {% endblock %}
+{% block content %}
+{% include 'realtekrealty/navbar.html' %}
+<section id="login" class="bg-light py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card">
+            <div class="card-header bg-primary text-white">
+              <h4>
+                <i class="fas fa-sign-up"></i>Register</h4>
+            </div>
+            <div class="card-body"> 
+              <!-- Alerts -->
+              <form action="{% url 'realtekrealty:login' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="username">Firstname</label>
+                  <input type="text" name="firstname" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="password2">Lastname</label>
+                  <input type="text" name="lastname" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" class="form-control" required>
+                </div>
+                <div>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" class="form-control" required>
+                  </div>
+                <div class="form-group">
+                    <label for="password2">Confirm Password</label>
+                    <input type="password" name="password2" class="form-control" required>
+                  </div><br>
+                <input type="submit" value="Submit" class="btn btn-secondary btn-block">
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% endblock %}
