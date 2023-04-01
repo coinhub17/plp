@@ -1,3 +1,7 @@
 __pycache__/
 /static/
 settings.py
+db.sqlite3
+djangoweb
+.env
+staticfiles
