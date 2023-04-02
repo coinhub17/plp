@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config("key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =config('DEBUG',default=False, cast=bool)
+DEBUG =True#config('DEBUG',default=False, cast=bool)
 
 ALLOWED_HOSTS = ['https://realtekrealty.herokuapp.com']
 
@@ -35,7 +35,7 @@ ALLOWED_HOSTS = ['https://realtekrealty.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
+    'django.contrib.admin', 
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -69,6 +69,9 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'libraries' : {
+                'staticfiles': 'django.templatetags.static',
+                }
         },
     },
 ]
@@ -82,12 +85,12 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':'registry',
-        'USER':'StreetWiz',
-        'PASSWORD':'9627Tn9n',
-        'HOST':'127.0.0.1',
-        'PORT':'3306',     
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME':'d7nvu05rng9k32',
+        'USER':'cknhfhyxawivms',
+        'PASSWORD':'c498f99294998c58d62d3128745edab33878c1e282f9aa34b9f13876a75fb66c',
+        'HOST':'ec2-3-230-24-12.compute-1.amazonaws.com',
+        'PORT':'5432',     
     }
 }
 
@@ -129,7 +132,7 @@ STATIC_URL = 'static/'
 MEDIA_URL = 'media/'
 
 STASTICFILES_DIRS=os.path.join(BASE_DIR,'realtekrealty/static')
-STATIC_ROOT=os.path.abspath(BASE_DIR,"staticfiles")
+STATIC_ROOT=os.path.join(BASE_DIR,"staticfiles")
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"

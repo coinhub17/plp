@@ -7,8 +7,8 @@ tp=[
 ]
 
 class register(models.Model):
-    firstname=models.CharField(max_length=100, blank=False, null=False)
-    lastname=models.CharField(max_length=100, blank=False, null=False)
+    firstname=models.CharField(max_length=100, blank=True, null=True)
+    lastname=models.CharField(max_length=100, blank=True, null=True) 
     username=models.CharField(max_length=100, blank=False, null=False)
     email=models.EmailField(max_length=100, blank=False, null=False)
     password=models.CharField(max_length=100, blank=False, null=False)
@@ -23,8 +23,8 @@ class register(models.Model):
         return self.username
     
 class Uploads(models.Model):
-    hse=models.ImageField(upload_to='Images/')
-    vhse=models.FileField(upload_to='Videos/')
+    hse=models.ImageField(upload_to='Images/',null=False,blank=False,default='some_value')
+    vhse=models.FileField(upload_to='Videos/',blank=False,null=False,default='some_value')
     htp=models.CharField(max_length=10,choices=tp, blank=False, null=False)
     loc=models.CharField(max_length=100, blank=False, null=False)
     price=models.IntegerField()
@@ -40,6 +40,7 @@ class Uploads(models.Model):
         return self.desc
     
 class home(models.Model):
+    hse=models.ImageField(upload_to='Home-Images/')
     img=models.ImageField()
     locate=models.CharField(max_length=100, blank=False, null=False)
     descr=models.CharField(max_length=100, blank=False, null=False)

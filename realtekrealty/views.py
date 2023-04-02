@@ -90,4 +90,11 @@ def dashboard(request):
   return redirect("realtekrealty:index")
     
 
-# Create your views here.
+
+                
+                
+                
+
+
+
+
