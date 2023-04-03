@@ -29,7 +29,7 @@ SECRET_KEY = config("key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =config('DEBUG',default=False, cast=bool)
 
-ALLOWED_HOSTS = ['realtekrealty.herokuapp.com']
+ALLOWED_HOSTS = ['27.0.0.1','realtekrealty.herokuapp.com']
 
 
 # Application definition
