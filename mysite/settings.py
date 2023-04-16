@@ -24,12 +24,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = config("key")
+SECRET_KEY =##########   KEY-HERE.
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =config('DEBUG',default=False, cast=bool)
+DEBUG =True
 
-ALLOWED_HOSTS = ['27.0.0.1','realtekrealty.herokuapp.com']
+ALLOWED_HOSTS = [""]
 
 
 # Application definition
@@ -69,9 +69,6 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
-            'libraries' : {
-                'staticfiles': 'django.templatetags.static',
-                }
         },
     },
 ]
@@ -86,11 +83,11 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':'d7nvu05rng9k32',
-        'USER':'cknhfhyxawivms',
-        'PASSWORD':'c498f99294998c58d62d3128745edab33878c1e282f9aa34b9f13876a75fb66c',
-        'HOST':'ec2-3-230-24-12.compute-1.amazonaws.com',
-        'PORT':'5432',     
+        'NAME':'',
+        'USER':'',
+        'PASSWORD':'',
+        'HOST':'',
+        'PORT':'',     
     }
 }
 
